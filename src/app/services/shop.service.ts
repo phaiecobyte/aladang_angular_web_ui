@@ -1,0 +1,14 @@
+import { HttpClient } from "@angular/common/http";
+import { Injectable } from "@angular/core";
+
+@Injectable({
+    providedIn: 'root'
+})
+
+export class ShopService {
+    constructor(private http:HttpClient) { }
+
+    signIn(data:any){
+        return this.http.post('http://localhost:55131/app/v1/AppLoginUser', data);
+    }
+}
